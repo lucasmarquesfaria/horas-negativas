@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcularDescontoHorasNegativas() {
+            let salarioMensal = parseFloat(prompt("Digite seu salário mensal (em R$):"));
+            let horasMensais = parseFloat(prompt("Digite a quantidade total de horas trabalhadas no mês:"));
+            
+            if (isNaN(salarioMensal) || isNaN(horasMensais) || horasMensais <= 0) {
+                alert("Por favor, insira valores numéricos válidos.");
+                return;
+            }
+            
+            let taxaPorHora = salarioMensal / horasMensais;
+            alert(`Sua taxa por hora é de R$ ${taxaPorHora.toFixed(2)}`);
+            
+            let horasTrabalhadas = parseFloat(prompt("Digite o total de horas trabalhadas:"));
+            let horasNegativas = parseFloat(prompt("Digite o total de horas negativas:"));
+            
+            if (isNaN(horasNegativas) || isNaN(horasTrabalhadas)) {
+                alert("Por favor, insira valores numéricos válidos.");
+                return;
+            }
+            
+            let desconto = horasNegativas * taxaPorHora;
+            let salarioCalculado = horasTrabalhadas * taxaPorHora;
+            
+            alert(`O desconto total será de R$ ${desconto.toFixed(2)}\nO valor total das horas trabalhadas será de R$ ${salarioCalculado.toFixed(2)}`);
+        }
+
+        calcularDescontoHorasNegativas();
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
